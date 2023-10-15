@@ -1,3 +1,5 @@
-export default function Button({ children }) {
-  return <button onClick={(e) => e.target.value}>{children}</button>;
+export default function Button({ children, setOutput }) {
+  return (
+    <button onClick={(e) => setOutput(e.target.innerText)}>{children}</button>
+  );
 }

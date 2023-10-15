@@ -4,32 +4,29 @@ import Button from "./Button";
 
 function App() {
   const [output, setOutput] = useState("");
-  const handleChangeOutput = function (value) {
-    setOutput(value);
-  };
 
   return (
     <div className="calculator">
       <div className="output">
-        <Output output={output} onChangeOutput={handleChangeOutput} />
+        <Output output={output} />
       </div>
       <div className="keypad">
-        <Button>Clear</Button>
+        <Button value="clear">Clear</Button>
         <Button>+-</Button>
         <Button>&divide;</Button>
-        <Button value="7">7</Button>
-        <Button value="8">8</Button>
-        <Button value="9">9</Button>
+        <Button setOutput={setOutput}>7</Button>
+        <Button setOutput={setOutput}>8</Button>
+        <Button setOutput={setOutput}>9</Button>
         <Button>&times;</Button>
-        <Button value="4">4</Button>
-        <Button value="5">5</Button>
-        <Button value="6">6</Button>
+        <Button setOutput={setOutput}>4</Button>
+        <Button setOutput={setOutput}>5</Button>
+        <Button setOutput={setOutput}>6</Button>
         <Button>-</Button>
-        <Button value="1">1</Button>
-        <Button value="2">2</Button>
-        <Button value="3">3</Button>
+        <Button setOutput={setOutput}>1</Button>
+        <Button setOutput={setOutput}>2</Button>
+        <Button setOutput={setOutput}>3</Button>
         <Button>+</Button>
-        <Button>0</Button>
+        <Button setOutput={setOutput}>0</Button>
         <Button>.</Button>
         <Button>=</Button>
       </div>
