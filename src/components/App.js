@@ -4,6 +4,13 @@ import Button from "./Button";
 
 function App() {
   const [output, setOutput] = useState("");
+  const handleAddOutput = function (value) {
+    setOutput(output + value);
+  };
+
+  const handleClear = function () {
+    setOutput("");
+  };
 
   return (
     <div className="container">
@@ -12,23 +19,45 @@ function App() {
           <Output output={output} />
         </div>
         <div className="keypad">
-          <Button>Clear</Button>
+          <Button onClick={handleClear}>Clear</Button>
           <Button>+-</Button>
           <Button>&divide;</Button>
-          <Button setOutput={setOutput}>7</Button>
-          <Button setOutput={setOutput}>8</Button>
-          <Button setOutput={setOutput}>9</Button>
+          <Button onClick={(e) => handleAddOutput(e.target.innerText)}>
+            7
+          </Button>
+          <Button onClick={(e) => handleAddOutput(e.target.innerText)}>
+            8
+          </Button>
+          <Button onClick={(e) => handleAddOutput(e.target.innerText)}>
+            9
+          </Button>
           <Button>&times;</Button>
-          <Button setOutput={setOutput}>4</Button>
-          <Button setOutput={setOutput}>5</Button>
-          <Button setOutput={setOutput}>6</Button>
+          <Button onClick={(e) => handleAddOutput(e.target.innerText)}>
+            4
+          </Button>
+          <Button onClick={(e) => handleAddOutput(e.target.innerText)}>
+            5
+          </Button>
+          <Button onClick={(e) => handleAddOutput(e.target.innerText)}>
+            6
+          </Button>
           <Button>-</Button>
-          <Button setOutput={setOutput}>1</Button>
-          <Button setOutput={setOutput}>2</Button>
-          <Button setOutput={setOutput}>3</Button>
+          <Button onClick={(e) => handleAddOutput(e.target.innerText)}>
+            1
+          </Button>
+          <Button onClick={(e) => handleAddOutput(e.target.innerText)}>
+            2
+          </Button>
+          <Button onClick={(e) => handleAddOutput(e.target.innerText)}>
+            3
+          </Button>
           <Button>+</Button>
-          <Button setOutput={setOutput}>0</Button>
-          <Button setOutput={setOutput}>.</Button>
+          <Button onClick={(e) => handleAddOutput(e.target.innerText)}>
+            0
+          </Button>
+          <Button onClick={(e) => handleAddOutput(e.target.innerText)}>
+            .
+          </Button>
           <Button>=</Button>
         </div>
       </div>
