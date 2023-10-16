@@ -17,6 +17,7 @@ function App() {
   };
 
   const handleComputation = function (sign) {
+    if (output === eval(compute.slice(0, compute.length - 3))) return;
     if (isNaN(compute[compute.length - 2]) && !output) return;
     setCompute(compute + output + ` ${sign} `);
     setOutput("");
