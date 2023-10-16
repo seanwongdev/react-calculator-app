@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Output from "./Output";
 import Button from "./Button";
+import Compute from "./Compute";
 
 function App() {
   const [output, setOutput] = useState("");
@@ -12,9 +13,14 @@ function App() {
     setOutput("");
   };
 
+  const handleEquate = function () {};
+
   return (
     <div className="container">
       <div className="calculator">
+        <div className="computation">
+          <Compute />
+        </div>
         <div className="output">
           <Output output={output} />
         </div>
