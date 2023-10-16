@@ -1,7 +1,7 @@
-export default function Compute() {
+export default function Compute({ compute }) {
   return (
     <form>
-      <input></input>
+      <input value={compute}></input>
     </form>
   );
 }
