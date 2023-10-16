@@ -17,6 +17,7 @@ function App() {
   };
 
   const handleComputation = function (sign) {
+    if (isNaN(compute[compute.length - 2]) && !output) return;
     setCompute(compute + output + ` ${sign} `);
     setOutput("");
   };
@@ -27,10 +28,16 @@ function App() {
   };
 
   const handleEquation = function (sign) {
+    if (!output) return;
     setCompute(compute + output + ` ${sign} `);
     const expression = compute.replace(/÷/g, "/") + output;
     const result = eval(expression);
     setOutput(result);
+  };
+
+  const handleDel = function () {
+    setCompute((compute) => compute.slice(0, compute.length - 3));
+    setOutput("");
   };
 
   return (
@@ -46,7 +53,9 @@ function App() {
           <Button className="highlighted" onClick={handleClear}>
             Clear
           </Button>
-          <Button className="highlighted">+-</Button>
+          <Button className="highlighted" onClick={handleDel}>
+            Del
+          </Button>
           <Button
             className="highlighted"
             onClick={(e) => handleComputation(e.target.innerText)}
