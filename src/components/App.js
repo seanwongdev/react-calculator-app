@@ -43,9 +43,14 @@ function App() {
           <Output output={output} />
         </div>
         <div className="keypad">
-          <Button onClick={handleClear}>Clear</Button>
-          <Button>+-</Button>
-          <Button onClick={(e) => handleComputation(e.target.innerText)}>
+          <Button className="highlighted" onClick={handleClear}>
+            Clear
+          </Button>
+          <Button className="highlighted">+-</Button>
+          <Button
+            className="highlighted"
+            onClick={(e) => handleComputation(e.target.innerText)}
+          >
             &divide;
           </Button>
           <Button onClick={(e) => handleAddOutput(e.target.innerText)}>
@@ -57,9 +62,13 @@ function App() {
           <Button onClick={(e) => handleAddOutput(e.target.innerText)}>
             9
           </Button>
-          <button value="*" onClick={(e) => handleComputation(e.target.value)}>
+          <Button
+            className="highlighted"
+            value="*"
+            onClick={(e) => handleComputation(e.target.value)}
+          >
             &times;
-          </button>
+          </Button>
           <Button onClick={(e) => handleAddOutput(e.target.innerText)}>
             4
           </Button>
@@ -69,7 +78,10 @@ function App() {
           <Button onClick={(e) => handleAddOutput(e.target.innerText)}>
             6
           </Button>
-          <Button onClick={(e) => handleComputation(e.target.innerText)}>
+          <Button
+            className="highlighted"
+            onClick={(e) => handleComputation(e.target.innerText)}
+          >
             -
           </Button>
           <Button onClick={(e) => handleAddOutput(e.target.innerText)}>
@@ -81,7 +93,10 @@ function App() {
           <Button onClick={(e) => handleAddOutput(e.target.innerText)}>
             3
           </Button>
-          <Button onClick={(e) => handleComputation(e.target.innerText)}>
+          <Button
+            className="highlighted"
+            onClick={(e) => handleComputation(e.target.innerText)}
+          >
             +
           </Button>
           <Button onClick={(e) => handleAddOutput(e.target.innerText)}>
@@ -90,7 +105,12 @@ function App() {
           <Button onClick={(e) => handleAddOutput(e.target.innerText)}>
             .
           </Button>
-          <Button onClick={(e) => handleEquation(e.target.innerText)}>=</Button>
+          <Button
+            className="highlighted"
+            onClick={(e) => handleEquation(e.target.innerText)}
+          >
+            =
+          </Button>
         </div>
       </div>
     </div>
