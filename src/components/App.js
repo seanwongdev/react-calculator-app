@@ -29,7 +29,6 @@ function App() {
   };
 
   const handleEquation = function (sign) {
-    if (output === eval(compute.slice(0, compute.length - 3))) return;
     if (!output) return;
     setCompute(compute + output + ` ${sign} `);
     const expression = compute.replace(/÷/g, "/") + output;
